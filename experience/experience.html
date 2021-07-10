@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>经 验</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" >
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/APlayer.min.css">
+    <link rel="stylesheet" type="text/css" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+</head>
+<body style="min-width: 500px">
+
+<div class="navbar-collapse">
+    <ul class="navbar navbar-nav">
+        <li style="color: #5e5e5e;">WELCOME TO DARK HORSE BLOG</li>
+        <li><a href="../index.html" >Home</a></li>
+        <li><a href="../about.html" >About</a></li>
+    </ul>
+<!--     <div style="text-align:right;margin-right: 10px;font-size: 25px;margin-top: 8px">-->
+<!--&lt;!&ndash;       <script type="text/javascript" src="js/counter.js"></script>&ndash;&gt;-->
+<!--   </div>-->
+<!--    <div class="counter"></div>-->
+<!--    <script type="text/javascript" style="border: 2px solid #0f0f0f;margin-top: 3px" src="http://services.webestools.com/cpt_visits/22909-1-1.js"></script>-->
+</div>
+
+<div class="col-sm-2">
+    <img src="../img/touxiang.png" width="200"/>
+    <h2 class="h2">DARK HORSE</h2>
+    <div class="list-group">
+        <a class="list-group-item " href="../introduction/introduction.html"><span class="fa fa-square"></span> 简 介</a>
+        <a class="list-group-item " href="../works/works.html"><span class="fa fa-square"></span>&nbsp;作 品</a>
+        <a class="list-group-item " href="../tips/tips.html"><span class="fa fa-square"></span> 技 能</a>
+        <a class="list-group-item active" href="../experience/experience.html"><span class="fa fa-square"></span>&nbsp;经  验</a>
+        <a class="list-group-item " href="../source/source.html"><span class="fa fa-square"></span>&nbsp;资  源</a>
+        <a class="list-group-item" href="../messyRecords/messyRecords.html"><span class="fa fa-square"></span>&nbsp;杂  记</a>
+        <a class="list-group-item" href="../afterThought/afterThought.html"><span class="fa fa-square"></span>&nbsp;后 感</a>
+    </div>
+</div>
+
+<!--文章块-->
+<div class="file-content">
+    <div class="title"><i class="fa fa-flag"></i>&nbsp;&nbsp;git命令流远端推送<em><i class="fa fa-calendar"></i> 2021/7/10 18:28</em></div>
+    <details>
+        <summary class="summary" title="点 击 看 内 容"><i class="fa fa-star"></i>&nbsp;&nbsp;介绍了用git命令推送到远端（GitHub）上的命令流。<i style="float: right;margin-top: 10px" class="fa fa-arrow-circle-down"></i></summary>
+        <p>
+        首先分两种情况，第一种就是首次安装好git后第一次推送，第二种就是第二次之后的重复推送。
+        </p>
+        <p>
+            第一次推送的话，命令流如下：
+        </p>
+        <pre disabled="disabled">
+            git init                                                                                                    #初始化，在项目文件下会自动创建.git和.idea文件夹
+            git add .                                                                                                   #打包目录下所有文件，准备推送
+            git commit -m "..."                                                                                         #这里填写关于版本的介绍内容，也可以随便填
+            git status                                                                                                  #查看状态
+            git remote add origin https://github.com/...                                                                #链接远端仓库，以后也会默认用这个地址
+            git push -u origin main                                                                                     #推送到远端，有时是master，只需把main换成master即可</pre>
+        <p>
+            第二次及以后的重复推送，命令流如下：
+            <pre disabled="disable">
+            git add *                                                                                                   #打包更新过的文件
+            git commit -m "..."                                                                                         #这里填写关于版本的介绍内容，也可以随便填
+            git status                                                                                                  #查看状态
+            git push                                                                                                    #推到远端</pre>
+        </p>
+
+    </details>
+
+</div>
+
+
+<!--音乐播放器-->
+<div id="aplayer"></div>
+<script src="../js/APlayer.min.js"></script>
+
+</body>
+</html>
