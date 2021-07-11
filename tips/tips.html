@@ -41,18 +41,27 @@
 
 <!--文章块-->
 <div class="file-content">
-    <div class="title"><i class="fa fa-flag"></i>&nbsp;&nbsp;建 站 初 心<em><i class="fa fa-calendar"></i> 2021/7/3 12:47</em></div>
+    <div class="title"><i class="fa fa-flag"></i>&nbsp;&nbsp;爬取某一网址下的图片<em><i class="fa fa-calendar"></i> 2021/7/11 10:18</em></div>
     <details>
-        <summary class="summary" title="点 击 看 内 容"><i class="fa fa-star"></i>&nbsp;&nbsp;讲述了建站的初衷。<i style="float: right;margin-top: 10px" class="fa fa-arrow-circle-down"></i></summary>
+        <summary class="summary" title="点 击 看 内 容"><i class="fa fa-star"></i>&nbsp;&nbsp;介绍了用Python爬取某一网址的图片，适用于批量图片下载。<i style="float: right;margin-top: 10px" class="fa fa-arrow-circle-down"></i></summary>
         <p>
-        第一次接触Python是由于公司举办的一次降本增效竞赛，我们准备开发一个在线简历筛选系统，目标是完成海量简历按需筛选，帮助HR挑选出满意的简历，提升工作效率；我自己只学过一点C语言的皮毛，
-        接手了最简单的登录页面开发。虽然是最简单的，网上也有很多教程，但是自己做起来还是废了很大劲儿。之后因为想选几组好看的婚纱照就学着在网站爬取图片，再之后就将爬
-        取到的图片拼成一张长图，感觉Python还是挺好玩的，能满足一些个人基本需求，慢慢儿就对Python产生了兴趣，想着做自己的网站，其实直白的讲就是个人博客。利用休息时间找了很多资料，有很多现成
-        的工具，比如Jeklly、WordPress、Hexo等，但是不完全满足自己的心意，另外想锻炼下自己的Python能力（作为一个业余人员），而且最重要的是可以根据自己的喜好实现想要的样子，达到“爷想咋耍就咋耍”
-        的感觉，哈哈,最后决定利用GitHub这个优秀的平台实现，最重要的是无限保存，不像一些网盘有速度和容量限制。
-        建站的第二个目的就是对学习资料、经验进行一个很好地总结归纳，方便以后查找，这点很重要。
-        第三个目的就是记录一些感想，很认同一句话，“每个人都是一位作家”，其实每个人都是一本书，我们都在记录着自己的故事，所以我也想记录下自己的感受心得。
+        先总结下，我觉着爬图的整个过程就是代替了另存为这个功能，对于几张图片来说另存为更方便，如果要下载几十张的话，用爬图是比较省劲儿的。
+            首先你得找到想要爬图的网站，然后获取图片下载地址，再然后找到图片下载地址的相似之处，最后动脑瓜子编成代码让Python自动帮你下载。
         </p>
+        <p>
+            第一步找到要下载图片的网址，替换url_web的内容；第二步命名一个文件夹名称，用于存放图片；第三步获取图片下载地址，截取前半部分相同内容；第四步获取headers，有时候随便瞎填也
+            能通过，有时候就不行；第五步解析图片下载地址。
+        </p>
+        <a href="https://github.com/dkfzm/PublicCode">选择CormImages.py下载（源码）</a>
+        <pre disabled="disabled">
+        url_web = 'http://bj.121314.com/huodong/2408.html'               #图片网址，变量（需要手动修改）
+        foldername = '东方囍殿'                                           #存放图片的文件夹名称，变量（需要手动修改）
+        down_url = 'http://bj.121314.com/uploads/allimg/202010/'         #下载图片的url前缀，变量（需要手动修改,最简单的查看方法是右键，选择新标签打开，可以看到网址，也就是url）
+
+        #不知道怎么写headers的，看这篇文章 https://blog.csdn.net/qq_39380155/article/details/105584887
+        headers = {'User-agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36'}
+        pattern = re.compile('src="/uploads/allimg/202010/(.*?.jpg)"',re.S)         #src=“ ”中的内容必须和下载图片url后缀完全对应，变量（需要手动修改）</pre>
+
     </details>
 </div>
 

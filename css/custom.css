@@ -78,6 +78,14 @@ body{background-color: #e8e8e8}
     padding-top: 10px;
     padding-bottom: 15px;
 }
+.file-content a{
+    margin-left: 20px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #2462c4;
+    text-decoration:none
+}
+.file-content a:hover{color: #e50812}
 
 .file-content pre {
     margin: 0 1% 20px 1%;
@@ -118,7 +126,7 @@ body{background-color: #e8e8e8}
 .file-content ul li a{
     font-size: 16px;
     line-height: 30px;
-    color: #0f0f0f;
+    color: #2462c4;
     text-decoration:none
 }
 .file-content ul li a:hover{color: #e50812}
