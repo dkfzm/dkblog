@@ -41,7 +41,7 @@
 
 <!--文章块-->
 <div class="file-content">
-    <div class="title"><i class="fa fa-flag"></i>&nbsp;&nbsp;爬取某一网址下的图片<em><i class="fa fa-calendar"></i> 2021/7/11 10:18</em></div>
+    <div class="title"><i class="fa fa-flag"></i>&nbsp;&nbsp;爬图片<em><i class="fa fa-calendar"></i> 2021/07/11 10:18</em></div>
     <details>
         <summary class="summary" title="点 击 看 内 容"><i class="fa fa-star"></i>&nbsp;&nbsp;介绍了用Python爬取某一网址的图片，适用于批量图片下载。<i style="float: right;margin-top: 10px" class="fa fa-arrow-circle-down"></i></summary>
         <p>
@@ -64,6 +64,40 @@
 
     </details>
 </div>
+<!--文章块-->
+<div class="file-content">
+    <div class="title"><i class="fa fa-flag"></i>&nbsp;&nbsp;拼长图<em><i class="fa fa-calendar"></i> 2021/09/20 16:56</em></div>
+    <details>
+        <summary class="summary" title="点 击 看 内 容"><i class="fa fa-star"></i>&nbsp;&nbsp;介绍了用Python将多张图片做成一张竖版长图，也可以拓展为多列。<i style="float: right;margin-top: 10px" class="fa fa-arrow-circle-down"></i></summary>
+        <p>先上效果图</p>
+        <img class="img-center" src="../img/慕夏花园-横版.jpg"  width="100%"/>
+        <img class="img-center" src="../img/慕夏花园-竖版.jpg" height="100%" >
+        <p>大概流程是：</p>
+        <p>1、将多张图片放在一个指定文件夹中</p>
+        <p>2、读取所有图片，写到一个列表</p>
+        <p>3、对列表进行排序，如果对拼接图片的顺序没有要求可以不做这一步</p>
+        <p>4、计算画布的宽和高，这里我取最宽的图片的宽度作为画布的宽，将其他图片等比例缩放，分别做了两个列表，以备后用</p>
+        <p>5、新建画布后，将读取的图片进行等比例缩放，然后粘贴到画布上，可以设置图片之间的距离，这样容易区分</p>
+        <p>横版代码未按最高高度拼接，可参考竖版</p>
+
+        <p>下面解释几条关键语句：</p>
+        <a href="https://github.com/dkfzm/PublicCode">下载竖版拼长图代码，选择CombineImages-vertical.py</a>
+        <a href="https://github.com/dkfzm/PublicCode">下载横版拼长图代码，选择CombineImages-horizontal.py</a>
+        <pre disabled="disabled">
+            #读取文件夹下的所有图片，包含了图片的像素、类型等所有信息
+            image_names = [name for name in os.listdir(IMAGES_PATH) for item in IMAGES_FORMAT if os.path.splitext(name)[1] == item]
+            #对获得的图片列表进行排序，这里比较关键(key=len)。在网上找了很多资料都没说明白怎么用最简单代码进行有效排序
+            image_names.sort(key=len)
+            #新建一个白色的画布，其中img_marg*num变量是图片的间距
+            to_image = Image.new('RGB', (WIDTH,HEIGHT+img_marg*num) , color=(255,255,255))  # 创建一个新的空白白色底图
+            #按所有图片最宽的宽度重新调整图片大小
+            from_image = image.resize((WIDTH, height_array[y]), Image.ANTIALIAS)
+            #依次将图片贴到画布上，注意贴图的坐标按左、上定义
+            to_image.paste(from_image,(0,height_temp))       </pre>
+
+    </details>
+</div>
+
 
 !--音乐播放器-->
 <div id="aplayer"></div>

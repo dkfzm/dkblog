@@ -3,7 +3,9 @@ body{background-color: #e8e8e8}
 .navbar-nav{margin-top: 7px;flex-direction:column;font-family:sans-serif;text-indent: 100px;font-size: 25px;}
 .navbar-nav li{list-style-type: none;display: inline;}
 .navbar-nav li a{color:#8c8c8c;text-decoration: none}
-.navbar-nav li a:hover,a:active{color: white}
+.navbar-nav li a:hover{color:#ffffff;cursor:pointer}
+
+.navbar-nav li a:active{color:#578bc3}
 .col-sm-2{position:absolute;width:250px;height: 100%;margin-top: 60px}
 /*.list-group-item {font-size: 15px;background-color: #e7e7e7;}*/
 .list-group-item{position:relative;font-family: "Arial Black";text-align: left;font-size: 20px;word-spacing: 35px}
@@ -19,7 +21,7 @@ body{background-color: #e8e8e8}
 /*    float: right;*/
 /*}*/
 .title{
-    /*alignment: left;*/
+    text-indent: 0.7em;
     font-size: 25px;
     font-family: 微软雅黑;
     color: #242424;
@@ -56,9 +58,9 @@ body{background-color: #e8e8e8}
     font-size: 18px;
     font-family: "Arial Black";
     color: #080808;
-    line-height: 30px;
-    /*首行缩进2个字符*/
-    text-indent: 20px;
+    line-height: 2em;
+    /*首行缩进1个字符*/
+    text-indent: 1em;
     text-align: justify;
     padding-top: 10px;
     padding-bottom: 15px;
@@ -71,43 +73,48 @@ body{background-color: #e8e8e8}
     margin-left: 20px;
     margin-right:20px;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 2em;
     /*首行缩进2个字符*/
-    text-indent: 32px;
+    text-indent: 2em;
     text-align: justify;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    /*padding-top: 1px;*/
+    /*padding-bottom: 1px;*/
+
 }
 .file-content a{
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 16px;
-    line-height: 30px;
+    line-height: 2em;
     color: #2462c4;
-    text-decoration:none
+    /*取消下划线*/
+    text-decoration:none;
 }
+
 .file-content a:hover{color: #e50812}
 
 .file-content pre {
-    margin: 0 1% 20px 1%;
-    width:  98%;
     background:#0f0f0f;
     font-family:Helvetica;
     font-size: 16px;
     color: #8c8c8c;
-
+    line-height: 2em;
 }
 
 /*图片自动居中*/
-.file-content img {
+.file-content .img-center {
     display: flex;
     /*text-align: center;*/
     margin:10px auto;
     /*max-width: 50%;*/
 }
 
+.file-content .img-bottom{
+    padding-top: 400px;
+    width:100%
+}
+
 .file-content ul{
-    margin-left: 20px;
-    /*margin-right:20px;*/
+    margin-left: 2em;
     font-size: 18px;
     line-height: 30px;
     text-align: justify;
@@ -115,21 +122,21 @@ body{background-color: #e8e8e8}
     padding-bottom: 15px;
 }
 .file-content ul li{
+    list-style: none;
     font-size: 16px;
-    margin-left: 20px;
-    margin-right:20px;
     line-height: 20px;
     text-align: justify;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .file-content ul li a{
+    margin-left: 0;
     font-size: 16px;
     line-height: 30px;
     color: #2462c4;
     text-decoration:none
 }
-.file-content ul li a:hover{color: #e50812}
+.file-content ul li a:hover{color: #e50812;cursor:pointer}
 .file-content ul li a:active{color: #4cae4c}
 
 .file-content ul li em{
